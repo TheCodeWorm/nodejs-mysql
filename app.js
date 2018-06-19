@@ -44,6 +44,7 @@ app.get('/createpoststable', () => {
 });
 */
 
+/*
 app.get('/addpost1', (req, res) => {
   let post = {title:'Post One', body:'This is post number one'};
   let sql = 'INSERT INTO POSTS SET ?';
@@ -54,6 +55,7 @@ app.get('/addpost1', (req, res) => {
   	res.send("Post 1 added...");
   });
 });
+*/
 
 app.listen('3000', () => {
 	console.log("Server started on port 3000");
