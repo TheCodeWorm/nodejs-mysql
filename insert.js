@@ -25,3 +25,11 @@ let query = connection.query('insert into articles set ?', article, function(err
   console.log(query.sql);
 });
 */
+
+connection.query('select * from articles', function(err, result) {
+  if (err) {
+  	console.log(err);
+  	return;
+  }
+  console.log(result[0].author);
+});
