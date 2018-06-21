@@ -8,10 +8,30 @@ const connection = mysql.createConnection({
 });
 connection.connect();
 
-connection.query('select * from articles', function(err, result) {
+connection.query('SELECT * from articles', function(err, result) {
   if (err) {
   	console.log(err);
   	return;
   }
-  console.log(result[0].author);
+  let screenNameToFind = "Noel Caceres";
+  let count = 0;
+  for (let i=0; i<result.length; i++) {
+  	if (result[i].author === screenNameToFind) {
+  		count++;
+  		// delete, if there is more than 1
+  		if (count > 1) {
+  			const q = "DELETE FROM articles WHERE id = " + result[i].id;
+  			connection.query(q, function(err, result) {
+
+  			});
+  			if (err) {
+  				console.log(err);
+  				return;
+  			}
+  			console.log("deleted an extra");
+  			count--;
+  		}
+  		console.log("name found!");
+  	}
+  }
 });

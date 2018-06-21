@@ -8,7 +8,6 @@ const connection = mysql.createConnection({
 });
 connection.connect();
 
-/*
 // insert following article
 const article = {
 	author: 'Noel Caceres',
@@ -24,4 +23,3 @@ let query = connection.query('insert into articles set ?', article, function(err
   }
   console.log(query.sql);
 });
-*/
