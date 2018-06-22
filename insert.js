@@ -16,10 +16,17 @@ const article = {
 };
 
 // insert data
-let query = connection.query('insert into articles set ?', article, function(err, result) {
-  if (err) {
-  	console.log(err);
-  	return;
-  }
-  console.log(query.sql);
-});
+function insert(item) {
+  let query = connection.query('insert into articles set ?', item, function(err, result) {
+	  if (err) {
+	  	console.log(err);
+	  	return;
+	  }
+	  console.log(query.sql);
+	});
+}
+
+insert(article);
+
+
+
