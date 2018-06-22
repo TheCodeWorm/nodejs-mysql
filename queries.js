@@ -26,6 +26,7 @@ function insert(item) {
 	});
 }
 
+// select all from articles database
 function selectAll() {
   connection.query('SELECT * from articles', function(err, result) {
 	  if (err) {
